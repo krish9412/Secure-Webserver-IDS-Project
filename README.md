@@ -1,72 +1,74 @@
-# Secure Ubuntu Web Server with Intrusion Detection and Prevention
+# Secure Ubuntu Web Server with IDS/IPS
 
-## Project Overview
+## Overview
 
-This project demonstrates the design and implementation of a secure Ubuntu-based web server environment.
+This project demonstrates the deployment and hardening of a secure Ubuntu Server environment using multiple layers of security controls.
 
-The system combines web hosting, firewall protection, intrusion prevention, and intrusion detection technologies to improve the security of a Linux server.
+The environment was built in VMware and includes:
 
-## Technologies Used
+* Apache2 Web Server
+* OpenSSH Server
+* UFW Firewall
+* Fail2Ban Intrusion Prevention
+* Suricata Intrusion Detection System (IDS)
 
-- Ubuntu Server 26.04 LTS
-- Apache2
-- OpenSSH
-- UFW Firewall
-- Fail2Ban
-- Suricata IDS
-- VMware Workstation
+## Security Features
 
-## Objectives
+### Web Server Security
 
-- Deploy a web server using Apache2
-- Configure secure SSH remote access
-- Implement firewall protection using UFW
-- Prevent brute-force attacks using Fail2Ban
-- Detect suspicious network traffic using Suricata
-- Monitor system and security logs
+* Apache2 deployed and configured
+* Remote web access validated
 
-## System Architecture
+### Secure Administration
 
-Windows Host
-│
-VMware Workstation
-│
-Ubuntu Server
-├── Apache2
-├── SSH
-├── UFW Firewall
-├── Fail2Ban
-└── Suricata IDS
-
-## Features
-
-### Web Hosting
-Apache2 web server deployed successfully.
-
-### Remote Administration
-Secure remote administration through SSH.
+* SSH enabled for remote management
+* Administrative access restricted
 
 ### Firewall Protection
-UFW configured to allow only required services.
+
+* UFW configured to allow only required services
+* Ports 22, 80 and 443 managed through firewall rules
 
 ### Intrusion Prevention
-Fail2Ban configured to block repeated failed login attempts.
+
+* Fail2Ban configured to monitor SSH authentication attempts
+* Automated blocking of suspicious login activity
 
 ### Intrusion Detection
-Suricata configured with over 50,000 detection rules.
 
-## Testing
+* Suricata IDS deployed with updated community rules
+* Over 50,000 active detection signatures loaded
+* Network traffic inspection and alert generation enabled
 
-- Apache service tested
-- SSH connectivity verified
-- Firewall rules validated
-- Fail2Ban status confirmed
-- Suricata rule engine tested
+## Technologies
+
+* Ubuntu Server 26.04 LTS
+* Apache2
+* OpenSSH
+* UFW
+* Fail2Ban
+* Suricata
+* VMware Workstation
+
+## Skills Demonstrated
+
+* Linux Administration
+* Web Server Deployment
+* Network Security
+* Firewall Configuration
+* Intrusion Detection
+* Intrusion Prevention
+* Security Monitoring
+* Virtualization
 
 ## Screenshots
 
-Screenshots are available in the screenshots folder.
+See the screenshots directory for deployment, configuration, and testing evidence.
 
-## Author
+## Future Improvements
 
-Krishan
+* HTTPS with SSL/TLS
+* SIEM integration
+* Centralized logging
+* Multi-factor authentication
+* Suricata IPS mode
